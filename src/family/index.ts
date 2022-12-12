@@ -7,6 +7,8 @@ import _moment from 'moment'
 import { RouterState } from 'connected-react-router'
 import { Store } from 'redux'
 import { History } from 'history'
+import '@liutsing/mock-extend'
+
 export default Family
 export { Bundle }
 

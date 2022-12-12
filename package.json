@@ -13,7 +13,7 @@
     "test": "npm run lint",
     "eject": "react-scripts eject",
     "lint": "tslint --project ./ -c tslint.json --fix",
-    "build-docker": "docker build --rm -f \"Dockerfile\" -t rapteam/rap2-dolores:latest ."
+    "build-docker": "docker build --rm -f \"Dockerfile\" -t mapleimage123/rap2-dolores:latest ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "author": "mozhi.gyy@alibaba-inc.com",
   "license": "ISC",
   "dependencies": {
+    "@liutsing/mock-extend": "^0.0.3",
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/pickers": "^3.2.10",
@@ -33,6 +34,7 @@
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
+    "clsx": "^1.2.1",
     "codemirror": "5.49.0",
     "connected-react-router": "^6.5.2",
     "debounce-promise": "^3.1.2",
@@ -114,6 +116,7 @@
     "react-scripts": "^3.1.2",
     "sass": "^1.23.2",
     "standard": "14.3.1",
+    "tslib": "^2.4.1",
     "tslint": "^6.1.2",
     "tslint-react": "^5.0.0",
     "tslint-react-hooks": "^2.2.2",

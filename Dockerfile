@@ -1,5 +1,5 @@
 # BUILDING
-FROM node:lts-alpine AS builder
+FROM node:16 AS builder
 
 WORKDIR /app
 
@@ -9,15 +9,15 @@ COPY . ./
 COPY docker/config.prod.ts ./src/config/config.prod.ts
 
 # 在国内打开下面一行加速
-RUN npm config set registry https://registry.npm.taobao.org/ && npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
+RUN npm config set registry https://registry.npmmirror.com/ && npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 
 RUN npm install && \
-    npm install typescript -g && \
+    npm install typescript@3 -g && \
     npm run lint && \
     npm run build
 
 # nginx
-FROM nginx:stable-alpine
+FROM nginx:1.23
 
 COPY --from=builder app/build /dolores
 RUN rm /etc/nginx/conf.d/default.conf
